@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Dice dice = new Dice();
+    Dice dice = new Dice(4, 12);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
