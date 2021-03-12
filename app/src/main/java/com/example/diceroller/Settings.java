@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 
+import java.util.Arrays;
+
 public class Settings extends AppCompatActivity {
 
     @Override
@@ -26,17 +28,10 @@ public class Settings extends AppCompatActivity {
         numberOfDicePicker.setValue(numberOfDice);
 
         Spinner sidesSpinner = findViewById(R.id.sidesSpinner);
-        Integer[] diceSides = Dice.dice;
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, diceSides);
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Dice.dice);
         sidesSpinner.setAdapter(adapter);
+        sidesSpinner.setSelection(Dice.indexOfDice(sides));
 
-        int spinnerPos = 1;
-        for (int i = 0; i < diceSides.length; i++){
-            if (sides == diceSides[i]){
-                spinnerPos = i;
-            }
-        }
-        sidesSpinner.setSelection(spinnerPos);
     }
 
     public void backClicked(View view) {

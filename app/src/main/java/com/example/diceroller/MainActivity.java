@@ -38,14 +38,9 @@ public class MainActivity extends AppCompatActivity {
             }
             results.append(rolls[rolls.length - 1]);
             sum += rolls[rolls.length - 1];
-            results.append("\n=\n ").append(sum);
-
-
+            results.append("\n=\n").append(sum);
         }
-
-
         result.setText(results.toString());
-
     }
 
     public void Settings(View view) {
