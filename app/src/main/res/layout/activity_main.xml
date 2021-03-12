@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/result"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=""
+        android:textAlignment="gravity"
+        android:textSize="64sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="rollDice"
+        android:padding="32dp"
+        android:layout_margin="12dp"
+        android:textSize="52sp"
+        style="@style/Widget.AppCompat.Button"
+        android:id="@+id/rollDicButton"
+        android:text="@string/roll"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Settings"
+        android:padding="32dp"
+        android:layout_margin="12dp"
+        android:textSize="32sp"
+        style="@style/Widget.AppCompat.Button"
+        android:id="@+id/settingsButton"
+        android:text="@string/settings"
+        />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
