@@ -1,34 +1,50 @@
 package com.example.diceroller;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextClock;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Dice dice = new Dice(2,20);
+    Dice dice = new Dice();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button rollDiceButton = (Button) findViewById(R.id.rollDicButton);
-        String rollString = (String) getResources().getString(R.string.roll);
-        String diceString = String.format("%s %xd%x",rollString, dice.numOfDice, dice.sides);
+        Button rollDiceButton = findViewById(R.id.rollDicButton);
+        String rollString = getResources().getString(R.string.roll);
+        String diceString = rollString + " " + dice.numOfDice + "D" + dice.sides;
         rollDiceButton.setText(diceString);
     }
 
 
     public void rollDice(View view) {
-        TextView result = (TextView) findViewById(R.id.result);
-        int roll = dice.roll();
-        result.setText(String.valueOf(roll));
+        TextView result = findViewById(R.id.result);
+        int[] rolls = dice.roll();
+        StringBuilder results = new StringBuilder();
+        if (rolls.length == 1) {
+            results.append(rolls[0]);
+        } else {
+            int sum = 0;
+            for (int i = 0; i < rolls.length - 1; i++) {
+                results.append(rolls[i]).append(" + ");
+                sum += rolls[i];
+            }
+            results.append(rolls[rolls.length - 1]);
+            sum += rolls[rolls.length - 1];
+            results.append("\n=\n ").append(sum);
+
+
+        }
+
+
+        result.setText(results.toString());
 
     }
 

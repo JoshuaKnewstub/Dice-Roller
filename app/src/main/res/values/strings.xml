@@ -21,6 +21,6 @@
     <string name="number_of_dice">Number of Dice</string>
     <string name="sides">Sides</string>
     <string name="save_and_return">Save And Return</string>
-    <string name="d">d</string>
+    <string name="d">D</string>
     <string name="select_dice">Select Dice</string>
 </resources>

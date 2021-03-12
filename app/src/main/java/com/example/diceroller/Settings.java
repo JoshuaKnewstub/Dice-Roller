@@ -20,19 +20,19 @@ public class Settings extends AppCompatActivity {
         int numberOfDice = intent.getIntExtra("numberOfDice", 1);
         int sides = intent.getIntExtra("sides", 6);
 
-        NumberPicker numberOfDicePicker = (NumberPicker) findViewById(R.id.numberOfDicePicker);
+        NumberPicker numberOfDicePicker = findViewById(R.id.numberOfDicePicker);
         numberOfDicePicker.setMinValue(1);
         numberOfDicePicker.setMaxValue(10);
         numberOfDicePicker.setValue(numberOfDice);
 
-        Spinner sidesSpinner = (Spinner) findViewById(R.id.sidesSpinner);
-        Integer[] dice = new Integer[]{4, 6, 8, 10, 12, 20};
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, dice);
+        Spinner sidesSpinner = findViewById(R.id.sidesSpinner);
+        Integer[] diceSides = Dice.dice;
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, diceSides);
         sidesSpinner.setAdapter(adapter);
 
         int spinnerPos = 1;
-        for (int i = 0; i < dice.length; i++){
-            if (sides == dice[i]){
+        for (int i = 0; i < diceSides.length; i++){
+            if (sides == diceSides[i]){
                 spinnerPos = i;
             }
         }
