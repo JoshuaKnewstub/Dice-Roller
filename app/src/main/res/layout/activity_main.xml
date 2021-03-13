@@ -8,38 +8,57 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/results"
         style="@style/Widget.AppCompat.TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="center"
-        android:text=""
-        android:textAlignment="gravity"
-        android:textSize="64sp" />
+        android:textAlignment="center"
+        android:padding="32dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginHorizontal="24dp"
+        android:textSize="40sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+        />
+
+    <TextView
+        android:id="@+id/total"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_margin="24dp"
+        android:textSize="64sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="rollDice"
-        android:padding="32dp"
-        android:layout_margin="12dp"
-        android:textSize="52sp"
+        android:padding="24dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12sp"
+        android:textSize="42sp"
         style="@style/Widget.AppCompat.Button"
         android:id="@+id/rollDicButton"
         android:text="@string/roll"
+        android:soundEffectsEnabled="false"
         />
 
     <Button
+        android:id="@+id/settingsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="Settings"
-        android:padding="32dp"
+        android:padding="16dp"
         android:layout_margin="12dp"
-        android:textSize="32sp"
+        android:textSize="24sp"
         style="@style/Widget.AppCompat.Button"
-        android:id="@+id/settingsButton"
-        android:text="@string/settings"
+        android:text="@string/select_dice"
         />
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

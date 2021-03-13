@@ -17,11 +17,7 @@ public class Dice {
 
     public Dice(int numOfDice, int sides) {
         this.numOfDice = numOfDice;
-//        if (Arrays.asList(dice).contains(sides)) {
-//            this.sides = sides;
-//        } else {
-//            this.sides = dice[2];
-//        }
+
         this.sides = dice[indexOfDice(sides)];
     }
 

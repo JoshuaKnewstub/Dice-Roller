@@ -59,6 +59,7 @@
 
     <Button
         android:id="@+id/saveButton"
+        android:soundEffectsEnabled="false"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
