@@ -1,42 +1,49 @@
 package com.example.diceroller;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Dice {
 
-    public static Integer[] dice = new Integer[]{4, 6, 8, 10, 12, 20};
-    int numOfDice;
+
     int sides;
-    Random random = new Random();
+    int numOfDice;
+//    public static Integer[] dice = new Integer[]{4, 6, 8, 10, 12, 20};
 
-    public Dice() {
-        this.sides = dice[2];
-        this.numOfDice = 2;
+
+    public static final Dice[] dice = {
+            new Dice(4),
+            new Dice(6),
+            new Dice(8),
+            new Dice(10),
+            new Dice(12),
+            new Dice(20)
+    };
+
+    private Dice(int sides) {
+        this.sides = sides;
+        this.numOfDice = 1;
     }
 
-    public Dice(int numOfDice, int sides) {
-        this.numOfDice = numOfDice;
-
-        this.sides = dice[indexOfDice(sides)];
-    }
-
-    public int[] roll() {
-        int[] results = new int[numOfDice];
-        for (int i = 0; i < numOfDice; i++) {
-            results[i] = random.nextInt(sides) + 1;
-        }
-        return results;
-    }
-
-    public static int indexOfDice(int side) {
-        for (int i = 0; i < dice.length; i++) {
-            if (dice[i] == side) {
+    public static int getIndex(int sides) {
+        for (int i = 0; i < Dice.dice.length; i++) {
+            if (Dice.dice[i].sides == sides) {
                 return i;
             }
         }
         return 1;
     }
 
+    public static Integer[] getSidesAsInteger() {
+        Integer[] sides = new Integer[dice.length];
+        for (int i = 0; i < dice.length; i++) {
+            sides[i] = dice[i].sides;
+        }
+        return sides;
+    }
 
+
+    public int roll() {
+        Random random = new Random();
+        return (random.nextInt(sides) + 1);
+    }
 }
