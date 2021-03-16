@@ -1,4 +1,4 @@
-package com.example.diceroller;
+package joshuaknewstub.example.diceroller;
 
 import android.content.Context;
 
