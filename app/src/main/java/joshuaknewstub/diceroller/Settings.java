@@ -1,11 +1,10 @@
-package com.example.diceroller;
+package joshuaknewstub.diceroller;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
@@ -39,13 +38,13 @@ public class Settings extends AppCompatActivity {
 
 
         //Toggle whether sound effects are on or not with a toggle button
-        ToggleButton toggle = (ToggleButton) findViewById(R.id.toggleButton);
+        ToggleButton toggle = findViewById(R.id.toggleButton);
         toggle.setOnCheckedChangeListener((buttonView, isChecked) -> sfxOn = isChecked);
 
         //Get data from intent
         Intent intent = getIntent();
         int numberOfDice;
-        //Get settings if page was destoryed
+        //Get settings if page was destroyed
         if (savedInstanceState != null) {
             numberOfDice = savedInstanceState.getInt("numOfDicePicker");
             sfxOn = savedInstanceState.getBoolean("sfxOn");

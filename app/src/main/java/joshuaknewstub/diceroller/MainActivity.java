@@ -1,4 +1,4 @@
-package com.example.diceroller;
+package joshuaknewstub.diceroller;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putInt("dice", dice.sides);
+        savedInstanceState.putInt("dice", dice.Sides);
         savedInstanceState.putBoolean("sfxOn", sfxOn);
     }
 
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     public void updateRollButton() {
         Button rollDiceButton = findViewById(R.id.rollDiceButton);
         String rollString = getResources().getString(R.string.roll);
-        String diceString = rollString + " " + dice.numOfDice + "D" + dice.sides;
+        String diceString = rollString + " " + dice.numOfDice + "D" + dice.Sides;
         rollDiceButton.setText(diceString);
     }
 
@@ -113,11 +113,11 @@ public class MainActivity extends AppCompatActivity {
         total.setText(totals);
     }
 
-    //Use intents to do to the settings page passing the current settinigs
+    //Use intents to do to the settings page passing the current settings
     public void settingsClicked(View view) {
         Intent intent = new Intent(this, Settings.class);
         intent.putExtra("numberOfDice", dice.numOfDice);
-        intent.putExtra("sides", dice.sides);
+        intent.putExtra("sides", dice.Sides);
         intent.putExtra("sfxOn", sfxOn);
         startActivityForResult(intent, settingsRequestCode);
     }
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Use soundpool to load a few sound at once
+    //Use sound pool to load a few sound at once
     public void loadSounds() {
         soundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
         shake = soundPool.load(this, R.raw.shake, 1);

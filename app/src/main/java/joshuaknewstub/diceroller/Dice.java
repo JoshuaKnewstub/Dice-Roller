@@ -1,14 +1,12 @@
-package com.example.diceroller;
+package joshuaknewstub.diceroller;
 
 import java.util.Random;
 
 public class Dice {
 
 
-    int sides;
+    final int Sides;
     int numOfDice;
-//    public static Integer[] dice = new Integer[]{4, 6, 8, 10, 12, 20};
-
 
     public static final Dice[] dice = {
             new Dice(4),
@@ -20,13 +18,13 @@ public class Dice {
     };
 
     private Dice(int sides) {
-        this.sides = sides;
+        this.Sides = sides;
         this.numOfDice = 1;
     }
 
     public static int getIndex(int sides) {
         for (int i = 0; i < Dice.dice.length; i++) {
-            if (Dice.dice[i].sides == sides) {
+            if (Dice.dice[i].Sides == sides) {
                 return i;
             }
         }
@@ -36,7 +34,7 @@ public class Dice {
     public static Integer[] getSidesAsInteger() {
         Integer[] sides = new Integer[dice.length];
         for (int i = 0; i < dice.length; i++) {
-            sides[i] = dice[i].sides;
+            sides[i] = dice[i].Sides;
         }
         return sides;
     }
@@ -44,6 +42,6 @@ public class Dice {
 
     public int roll() {
         Random random = new Random();
-        return (random.nextInt(sides) + 1);
+        return (random.nextInt(Sides) + 1);
     }
 }
