@@ -12,4 +12,6 @@
     <string name="d">D</string>
     <string name="select_dice">Select Dice</string>
     <string name="sfx">SFX</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
 </resources>
