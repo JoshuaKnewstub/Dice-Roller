@@ -17,6 +17,7 @@ public class Settings extends AppCompatActivity {
     NumberPicker numberOfDicePicker;
     Spinner sidesSpinner;
     Boolean sfxOn;
+    public static final int REQUEST_CODE = 1234;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

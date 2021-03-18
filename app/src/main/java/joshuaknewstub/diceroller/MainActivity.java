@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
     //Initiate dice
     Dice dice = Dice.dice[2];
-    private static final int settingsRequestCode = 1234;
 
     //Sounds
     SoundPool soundPool;
@@ -119,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("numberOfDice", dice.numOfDice);
         intent.putExtra("sides", dice.Sides);
         intent.putExtra("sfxOn", sfxOn);
-        startActivityForResult(intent, settingsRequestCode);
+        startActivityForResult(intent, Settings.REQUEST_CODE);
     }
 
     //When returning to this activity apply the new settings
@@ -127,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == settingsRequestCode) {
+        if (requestCode == Settings.REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
 
                 dice = Dice.dice[data.getIntExtra("sides", 2)];
